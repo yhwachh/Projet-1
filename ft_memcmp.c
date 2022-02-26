@@ -1,18 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ibalbako <ibalbako@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/26 12:12:58 by ibalbako          #+#    #+#             */
+/*   Updated: 2022/02/26 12:15:10 by ibalbako         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "libft.h"
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char	*p1;
-	unsigned char	*p2;
+	unsigned char	*a;
+	unsigned char	*b;
 
-	p1 = (unsigned char *)s1;
-	p2 = (unsigned char *)s2;
+	a = (unsigned char *)s1;
+	b = (unsigned char *)s2;
 	while (n > 0)
 	{
-		if (*p1 != *p2)
-			return (*p1 - *p2);
-		p1++;
-		p2++;
+		if (*a != *b)
+		{
+			return (*a - *b);
+		}
+		a++;
+		b++;
 		n--;
 	}
 	return (0);
