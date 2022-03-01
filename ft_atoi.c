@@ -39,4 +39,4 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (egal * sign);
-}ß
+}
