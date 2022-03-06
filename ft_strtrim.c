@@ -11,65 +11,35 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 
-size_t	ft_strlen(const char *s)
+static char		*ft_strsub_bis(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	size;
+	char	*section;
+	size_t	i;
 
-	size = 0;
-	if (s[size] == '\0')
-		return (0);
-	while (s[size] != '\0')
-	{
-		size++;
-	}
-	return (size);
+	if (!(section = (char*)malloc(sizeof(*section) * (len + 1))))
+		return (NULL);
+	i = 0;
+	while (i < len)
+		section[i++] = (char)s[start++];
+	section[i] = '\0';
+	return (section);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char			*ft_strtrim(char const *s)
 {
-    char *f;
-    int i;
-    int j;
-    int len;
+	char const		*len;
+	char			*copy;
 
-    i = 0;
-    j = 0;
-    while(set[j])
-    {
-        if(s1[0] == set[j])
-        {
-            i++;
-        }
-        j++;
-    }
-    j--;
-    len = ft_strlen(s1) - 1;
-    while(set[j])
-    {
-        if(s1[len] == set[j])
-        {
-            len--;
-        }
-        j--;
-    }
-    while(s1[i] != s1[len])
-    {
-        i++;
-    }
-    f = malloc(sizeof(char) * (ft_strlen(s1) + 1));
-    if(!f)
-        return (NULL);
-    return(f); 
-}
-
-int main()
-{
-    const char s1[] = "hello";
-    const char set[] = "helloo";
-
-    printf("%s", ft_strtrim(s1,set));
+	if (!s)
+		return (NULL);
+	while (*s == ' ' || *s == '\n' || *s == '\t')
+		s++;
+	if (*s == '\0')
+		return (ft_strnew(0));
+	len = s + ft_strlen(s) - 1;
+	while (*len == ' ' || *len == '\n' || *len == '\t')
+		len--;
+	copy = ft_strsub_bis(s, 0, len - s + 1);
+	return (copy);
 }
