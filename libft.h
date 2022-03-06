@@ -1,20 +1,8 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ggane <marvin@42.fr>                       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/04/07 10:45:03 by ggane             #+#    #+#             */
-/*   Updated: 2016/12/28 10:00:12 by ggane            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # define BUFF_SIZE 100
 # include <string.h>
-# include "../libft/libft.h"
 # include <sys/types.h>
 # include <sys/uio.h>
 # include <unistd.h>

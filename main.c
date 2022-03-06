@@ -1,4 +1,3 @@
-#include "../libft.h"
 #include <strings.h>
 #include <stdlib.h>
 #include <stdio.h>
