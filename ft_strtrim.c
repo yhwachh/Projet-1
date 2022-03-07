@@ -6,18 +6,19 @@
 /*   By: ibalbako <ibalbako@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 12:41:02 by ibalbako          #+#    #+#             */
-/*   Updated: 2022/03/02 11:29:29 by ibalbako         ###   ########.fr       */
+/*   Updated: 2022/03/07 15:25:32 by ibalbako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		*ft_strsub_bis(char const *s, unsigned int start, size_t len)
+static char	*ft_strsub_bis(char const *s, unsigned int start, size_t len)
 {
 	char	*section;
 	size_t	i;
 
-	if (!(section = (char*)malloc(sizeof(*section) * (len + 1))))
+	section = ((char *)malloc(sizeof(*section) * (len + 1)));
+	if (!section)
 		return (NULL);
 	i = 0;
 	while (i < len)
@@ -26,7 +27,7 @@ static char		*ft_strsub_bis(char const *s, unsigned int start, size_t len)
 	return (section);
 }
 
-char			*ft_strtrim(char const *s)
+char	*ft_strtrim(char const *s)
 {
 	char const		*len;
 	char			*copy;

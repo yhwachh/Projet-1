@@ -6,7 +6,7 @@
 /*   By: ibalbako <ibalbako@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 12:18:07 by ibalbako          #+#    #+#             */
-/*   Updated: 2022/02/26 12:18:10 by ibalbako         ###   ########.fr       */
+/*   Updated: 2022/03/07 13:57:50 by ibalbako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	if (str[i] == '-')
-    {
-        sign *= -1;
+	{
+		sign *= -1;
 		i++;
-    }
-	else if(str[i] == '+')
-            i++;
-    while (str[i] && (str[i] >= '0' && str[i] <= '9'))
+	}
+	else if (str[i] == '+')
+		i++;
+	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
 	{
 		egal = egal * 10 + (str[i] - '0');
 		i++;

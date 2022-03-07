@@ -6,13 +6,13 @@
 /*   By: ibalbako <ibalbako@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 11:28:11 by ibalbako          #+#    #+#             */
-/*   Updated: 2022/03/02 11:28:14 by ibalbako         ###   ########.fr       */
+/*   Updated: 2022/03/07 13:37:30 by ibalbako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
 		c = c - 32;

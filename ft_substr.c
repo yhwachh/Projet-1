@@ -6,7 +6,7 @@
 /*   By: ibalbako <ibalbako@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 12:36:36 by ibalbako          #+#    #+#             */
-/*   Updated: 2022/02/26 12:38:39 by ibalbako         ###   ########.fr       */
+/*   Updated: 2022/03/07 15:31:52 by ibalbako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*mot;
 	int		i;
 
-    i = 0;
+	i = 0;
 	if (!s)
 		return (NULL);
 	mot = malloc((len + 1) * sizeof(char));

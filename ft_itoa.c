@@ -6,16 +6,15 @@
 /*   By: ibalbako <ibalbako@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 12:43:06 by ibalbako          #+#    #+#             */
-/*   Updated: 2022/02/26 12:43:39 by ibalbako         ###   ########.fr       */
+/*   Updated: 2022/03/07 12:38:59 by ibalbako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-size_t		ft_intlen(long int n)
+size_t	ft_intlen(long int n)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!n)
@@ -33,7 +32,7 @@ size_t		ft_intlen(long int n)
 	return (i);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char		*str;
 	size_t		len;
@@ -42,7 +41,8 @@ char *ft_itoa(int n)
 
 	nb = (long int)n;
 	len = ft_intlen(nb);
-	if (!(str = (char*)(malloc(sizeof(char) * (len + 1)))))
+	str = (char *)(malloc(sizeof(char) * (len + 1)));
+	if (!str)
 		return (NULL);
 	str[len] = '\0';
 	i = 0;

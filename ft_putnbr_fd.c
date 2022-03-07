@@ -6,15 +6,15 @@
 /*   By: ibalbako <ibalbako@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 12:52:06 by ibalbako          #+#    #+#             */
-/*   Updated: 2022/02/26 12:52:29 by ibalbako         ###   ########.fr       */
+/*   Updated: 2022/03/07 15:14:29 by ibalbako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lobft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-    long int nb;
+	long int	nb;
 
 	nb = n;
 	if (nb < 0)
