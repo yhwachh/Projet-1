@@ -12,35 +12,38 @@
 
 #include "libft.h"
 
-static char	*ft_strsub_bis(char const *s, unsigned int start, size_t len)
+static int	in_set(char c, const char *set)
 {
-	char	*section;
-	size_t	i;
-
-	section = ((char *)malloc(sizeof(*section) * (len + 1)));
-	if (!section)
-		return (NULL);
-	i = 0;
-	while (i < len)
-		section[i++] = (char)s[start++];
-	section[i] = '\0';
-	return (section);
+	while (*set)
+		if (c == *set++)
+			return (0);
+	return (1);
 }
 
-char	*ft_strtrim(char const *s)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char const		*len;
-	char			*copy;
+	size_t	start;
+	size_t	end;
+	char	*rtrn;
 
-	if (!s)
+	if (!s1)
 		return (NULL);
-	while (*s == ' ' || *s == '\n' || *s == '\t')
-		s++;
-	if (*s == '\0')
-		return (ft_strnew(0));
-	len = s + ft_strlen(s) - 1;
-	while (*len == ' ' || *len == '\n' || *len == '\t')
-		len--;
-	copy = ft_strsub_bis(s, 0, len - s + 1);
-	return (copy);
+	if (!set)
+		return (ft_strdup(s1));
+	start = 0;
+	end = ft_strlen(s1);
+	while (in_set(s1[start], set) == 0)
+		start++;
+	if (start == ft_strlen(s1))
+	{
+		rtrn = ft_strdup("");
+		if (!rtrn)
+			return (NULL);
+		else
+			return (rtrn);
+	}
+	while (in_set(s1[end - 1], set) == 0)
+		end--;
+	rtrn = ft_substr(s1, start, end - start);
+	return (rtrn);
 }
