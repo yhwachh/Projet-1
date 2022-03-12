@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 CC = gcc
-FLAG = -Wall -Werror -Wextra
+FLAG = -Wall -Wextra -Werror
 NAME = libft.a
 
 SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
@@ -40,9 +40,12 @@ bonus: $(B_OBJ)
 	ar rc $(NAME) $(B_OBJ)
 	ranlib $(NAME)
 
+%.o: %.c
+	$(CC) -c $(FLAG) $< -o $@
+
 clean:
 	rm -rf $(OBJ)
-	rm -f $(B_OBJ)
+	rm -rf $(B_OBJ)
 
 fclean: clean
 	rm -rf $(NAME)
