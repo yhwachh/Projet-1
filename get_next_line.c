@@ -84,7 +84,7 @@ char	*ft_read(int fd, char *str)
 			return (0);
 		}
 		temp[len] = '\0';
-		str = ft_strjoin(str, temp);
+		str = ft_strjoin2(str, temp);
 		if (ft_strchr(str, '\n'))
 		{
 			free (temp);
@@ -94,6 +94,7 @@ char	*ft_read(int fd, char *str)
 	free (temp);
 	return (str);
 }
+
 char	*get_next_line(int fd)
 {
 	static char	*str;

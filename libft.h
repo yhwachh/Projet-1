@@ -13,11 +13,14 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdlib.h>
+# include <sys/types.h>
+# include <sys/uio.h>
 # include <unistd.h>
+# include <stdlib.h>
 # include <string.h>
-
-# define BUFFER_SIZE 1
+# include <sys/stat.h>
+# include <fcntl.h>
+#  define BUFFER_SIZE 1
 
 
 int		ft_toupper(int c);
@@ -54,7 +57,11 @@ int		ft_isalnum(int c);
 void	*ft_calloc(size_t count, size_t size);
 void	ft_bzero(void *s, size_t n);
 int		ft_atoi(const char *str);
+size_t	count_word(char const *s, char c);
+char	**ft_strsplit(char const *s, char c);
 char	*get_next_line(int fd);
+char	*ft_strjoin2(char *s1, char *s2);
+
 
 typedef struct s_list
 {
