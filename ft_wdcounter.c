@@ -1,42 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_wdcounter.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibalbako <ibalbako@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/26 12:39:45 by ibalbako          #+#    #+#             */
-/*   Updated: 2022/03/07 14:53:29 by ibalbako         ###   ########.fr       */
+/*   Created: 2022/10/26 14:57:29 by ibalbako          #+#    #+#             */
+/*   Updated: 2022/10/26 14:58:02 by ibalbako         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int	ft_wdcounter(char const *str, char c)
 {
-	char	*str;
-	char	*res;
-	size_t	len;
+	int	i;
+	int	words;
 
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
-	len = ft_strlen(s1) + ft_strlen(s2);
-	str = (char *)malloc(len + 1);
-	if (str == NULL)
-		return (NULL);
-	res = str;
-	while (*s1)
+	words = 0;
+	i = 0;
+	while (str[i])
 	{
-		*str = *s1;
-		str++;
-		s1++;
+		while (str[i] == c && str[i] != '\0')
+			i++;
+		if (str[i])
+			words++;
+		while (str[i] != c && str[i] != '\0')
+			i++;
 	}
-	while (*s2)
-	{
-		*str = *s2;
-		str++;
-		s2++;
-	}
-	*str = '\0';
-	return (res);
+	return (words);
 }
